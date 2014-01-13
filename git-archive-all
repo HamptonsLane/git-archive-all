@@ -97,7 +97,7 @@ class GitArchiver(object):
 
             if not dry_run:
                 archive = ZipFile(path.abspath(output_path), 'w')
-                add = lambda file_path, file_name: archive.write(file_path, path.join(self.prefix, file_name), ZIP_DEFLATED)
+                add = lambda file_path, file_name: archive.write(file_path, file_name, ZIP_DEFLATED)
         elif output_format in ['tar', 'bz2', 'gz', 'tgz']:
             import tarfile
 
